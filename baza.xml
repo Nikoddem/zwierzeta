@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zwierzeta>
+    <zwierze>
+        <nazwa>Wilk</nazwa>
+        <kategoria>Trudne w utrzymaniu</kategoria>
+        <wymagania>
+            <uwaga>Dużo czasu</uwaga>
+            <przestrzen>Dużą przestrzeń</przestrzen>
+            <aktywnosc>Bardzo aktywne</aktywnosc>
+            <czystosc>Wymaga dużo dbałości o czystość</czystosc>
+        </wymagania>
+        <opis>Wilki są dzikimi zwierzętami, wymagającymi specjalistycznej opieki. Nie nadają się do trzymania w domach.</opis>
+    </zwierze>
+
+    <zwierze>
+        <nazwa>Kot</nazwa>
+        <kategoria>Łatwe w utrzymaniu</kategoria>
+        <wymagania>
+            <uwaga>Średnia ilość czasu</uwaga>
+            <przestrzen>Potrzebuje niewielkiej przestrzeni</przestrzen>
+            <aktywnosc>Średnia aktywność</aktywnosc>
+            <czystosc>Łatwe w utrzymaniu czystości</czystosc>
+        </wymagania>
+        <opis>Koty są popularnymi zwierzętami domowymi, łatwymi w pielęgnacji, dobrze znoszą samotność.</opis>
+    </zwierze>
+
+    <zwierze>
+        <nazwa>Chomik</nazwa>
+        <kategoria>Łatwe w utrzymaniu</kategoria>
+        <wymagania>
+            <uwaga>Wymaga niewielkiej uwagi</uwaga>
+            <przestrzen>Potrzebuje bardzo mało przestrzeni</przestrzen>
+            <aktywnosc>Średnia aktywność</aktywnosc>
+            <czystosc>Łatwe w utrzymaniu czystości</czystosc>
+        </wymagania>
+        <opis>Chomiki to małe, łatwe do utrzymania zwierzęta. Idealne dla osób, które nie mają dużo czasu.</opis>
+    </zwierze>
+
+    <zwierze>
+        <nazwa>Jeż</nazwa>
+        <kategoria>Średnia trudność w utrzymaniu</kategoria>
+        <wymagania>
+            <uwaga>Średnia ilość czasu</uwaga>
+            <przestrzen>Potrzebuje średniej przestrzeni</przestrzen>
+            <aktywnosc>Mało aktywne</aktywnosc>
+            <czystosc>Wymaga regularnego czyszczenia</czystosc>
+        </wymagania>
+        <opis>Jeże to ciche zwierzęta, które wymagają specjalistycznej opieki, ale nie potrzebują dużo przestrzeni.</opis>
+    </zwierze>
+
+    <zwierze>
+        <nazwa>Królika</nazwa>
+        <kategoria>Średnia trudność w utrzymaniu</kategoria>
+        <wymagania>
+            <uwaga>Średnia ilość czasu</uwaga>
+            <przestrzen>Potrzebuje średniej przestrzeni</przestrzen>
+            <aktywnosc>Średnia aktywność</aktywnosc>
+            <czystosc>Wymaga regularnego czyszczenia</czystosc>
+        </wymagania>
+        <opis>Króliki są świetnymi zwierzętami dla osób, które mogą poświęcić im średnią ilość uwagi, ale wymagają odpowiedniego miejsca i przestrzeni.</opis>
+    </zwierze>
+
+    <!-- Można dodać inne zwierzęta -->
+</zwierzeta>
