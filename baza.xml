@@ -1,64 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<zwierzeta>
-    <zwierze>
-        <nazwa>Wilk</nazwa>
-        <kategoria>Trudne w utrzymaniu</kategoria>
-        <wymagania>
-            <uwaga>Dużo czasu</uwaga>
-            <przestrzen>Dużą przestrzeń</przestrzen>
-            <aktywnosc>Bardzo aktywne</aktywnosc>
-            <czystosc>Wymaga dużo dbałości o czystość</czystosc>
-        </wymagania>
-        <opis>Wilki są dzikimi zwierzętami, wymagającymi specjalistycznej opieki. Nie nadają się do trzymania w domach.</opis>
-    </zwierze>
+<stronaZwierzat>
+<podstrona>
+  <tytul>Strona Główna</tytul>
+  <adres>strona-glowna</adres>
+  <obraz>obrazy/start.jpg</obraz>
+  <tresc>
+    <![CDATA[
+      <p>Witaj na stronie poświęconej zwierzętom w Polsce! Znajdziesz tu informacje o różnych gatunkach — od wilków po wróble.</p>
+      <p>Skorzystaj z menu, aby przejść do wybranej kategorii lub uruchom nasz kalkulator wyboru pupila.</p>
+    ]]>
+  </tresc>
+</podstrona>
 
+
+  <podstrona>
+    <tytul>Życie wilków w Polsce</tytul>
+    <adres>drapiezniki/wilki</adres>
+    <obraz>obrazy/wilk.jpg</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Wilki są zwierzętami społecznymi, żyjącymi w zorganizowanych grupach rodzinnych zwanych watahami. Wataha ma zazwyczaj jedną parę reprodukcyjną.</p>
+        <p>Ich terytorium może obejmować setki kilometrów kwadratowych. Komunikują się za pomocą wycia, znakowania terenu oraz języka ciała.</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+  <podstrona>
+    <tytul>Ptaki wodne – kaczki</tytul>
+    <adres>ptaki/kaczki</adres>
+    <obraz>obrazy/kaczka.jpg</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Kaczki to popularne ptaki wodne zamieszkujące jeziora, stawy i rzeki. Często można je spotkać w miejskich parkach, gdzie chętnie jedzą okruchy od ludzi.</p>
+        <p>Potrafią pływać dzięki błoniastym stopom, a ich pióra mają właściwości wodoodporne. Samce często wyróżniają się bardziej barwnym upierzeniem.</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+  <podstrona>
+    <tytul>Wróble</tytul>
+    <adres>ptaki/wroble</adres>
+    <obraz>obrazy/wrobel.jpg</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Nie wiem nic o wróblach, ale to takie miłe ptaszki</p>
+        <p>.....</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+  <podstrona>
+    <tytul>Jeże i ich zwyczaje</tytul>
+    <adres>ssaki/jeze</adres>
+    <obraz>obrazy/jez.jpg</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Jeże to niewielkie ssaki, które prowadzą nocny tryb życia. Zwijają się w kulkę, aby chronić się przed drapieżnikami, wykorzystując swoje ostre kolce.</p>
+        <p>Zimą zapadają w hibernację. Żywią się owadami, ślimakami i małymi bezkręgowcami, pomagając kontrolować ich populacje w ogrodach.</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+  <podstrona>
+    <tytul>Zwyczaje wiewiórek</tytul>
+    <adres>gryzonie/wiewiorki</adres>
+    <obraz>obrazy/wiewiorka.png</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Wiewiórki są aktywne głównie w ciągu dnia, szczególnie rano i późnym popołudniem. Uwielbiają wspinać się po drzewach i przeskakiwać z gałęzi na gałąź.</p>
+        <p>Gromadzą pożywienie na zimę, chowając orzechy i nasiona w różnych miejscach. Ich pamięć jest zaskakująco dobra, co pozwala im odnaleźć skrytki wiele tygodni później.</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+    <podstrona>
+    <tytul>Myszy</tytul>
+    <adres>gryzonie/myszy</adres>
+    <obraz>obrazy/mysz.jpg</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Nie wiem nic o myszach, ale to takie miłe potwory</p>
+        <p>.....</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+    <podstrona>
+    <tytul>Kalkulator zwierzaka</tytul>
+    <adres>kalkulator</adres>
+    <obraz>obrazy/kalkulator.jpg</obraz>
+    <tresc>
+      <![CDATA[
+        <p>Uzupełnij formularz, a zaproponujemy Ci idealne zwierzę!</p>
+      ]]>
+    </tresc>
+  </podstrona>
+
+  <zwierzetaDoKalkulatora>
+    <zwierze>
+      <nazwa>Rybki</nazwa>
+      <uwaga>malo</uwaga>
+      <miejsce>malo</miejsce>
+      <ruch>malo</ruch>
+      <kontakt>malo</kontakt>
+    </zwierze>
+    <zwierzeta>
+    <zwierze>
+        <nazwa>Pies</nazwa>
+        <uwaga>duzo</uwaga>
+        <miejsce>duzo</miejsce>
+        <ruch>duzo</ruch>
+        <kontakt>duzo</kontakt>
+    </zwierze>
     <zwierze>
         <nazwa>Kot</nazwa>
-        <kategoria>Łatwe w utrzymaniu</kategoria>
-        <wymagania>
-            <uwaga>Średnia ilość czasu</uwaga>
-            <przestrzen>Potrzebuje niewielkiej przestrzeni</przestrzen>
-            <aktywnosc>Średnia aktywność</aktywnosc>
-            <czystosc>Łatwe w utrzymaniu czystości</czystosc>
-        </wymagania>
-        <opis>Koty są popularnymi zwierzętami domowymi, łatwymi w pielęgnacji, dobrze znoszą samotność.</opis>
+        <uwaga>srednio</uwaga>
+        <miejsce>srednio</miejsce>
+        <ruch>srednio</ruch>
+        <kontakt>srednio</kontakt>
     </zwierze>
-
     <zwierze>
         <nazwa>Chomik</nazwa>
-        <kategoria>Łatwe w utrzymaniu</kategoria>
-        <wymagania>
-            <uwaga>Wymaga niewielkiej uwagi</uwaga>
-            <przestrzen>Potrzebuje bardzo mało przestrzeni</przestrzen>
-            <aktywnosc>Średnia aktywność</aktywnosc>
-            <czystosc>Łatwe w utrzymaniu czystości</czystosc>
-        </wymagania>
-        <opis>Chomiki to małe, łatwe do utrzymania zwierzęta. Idealne dla osób, które nie mają dużo czasu.</opis>
+        <uwaga>malo</uwaga>
+        <miejsce>malo</miejsce>
+        <ruch>duzo</ruch>
+        <kontakt>malo</kontakt>
     </zwierze>
-
     <zwierze>
-        <nazwa>Jeż</nazwa>
-        <kategoria>Średnia trudność w utrzymaniu</kategoria>
-        <wymagania>
-            <uwaga>Średnia ilość czasu</uwaga>
-            <przestrzen>Potrzebuje średniej przestrzeni</przestrzen>
-            <aktywnosc>Mało aktywne</aktywnosc>
-            <czystosc>Wymaga regularnego czyszczenia</czystosc>
-        </wymagania>
-        <opis>Jeże to ciche zwierzęta, które wymagają specjalistycznej opieki, ale nie potrzebują dużo przestrzeni.</opis>
+        <nazwa>Papuga</nazwa>
+        <uwaga>srednio</uwaga>
+        <miejsce>malo</miejsce>
+        <ruch>srednio</ruch>
+        <kontakt>duzo</kontakt>
     </zwierze>
-
     <zwierze>
-        <nazwa>Królika</nazwa>
-        <kategoria>Średnia trudność w utrzymaniu</kategoria>
-        <wymagania>
-            <uwaga>Średnia ilość czasu</uwaga>
-            <przestrzen>Potrzebuje średniej przestrzeni</przestrzen>
-            <aktywnosc>Średnia aktywność</aktywnosc>
-            <czystosc>Wymaga regularnego czyszczenia</czystosc>
-        </wymagania>
-        <opis>Króliki są świetnymi zwierzętami dla osób, które mogą poświęcić im średnią ilość uwagi, ale wymagają odpowiedniego miejsca i przestrzeni.</opis>
+        <nazwa>Żółw</nazwa>
+        <uwaga>malo</uwaga>
+        <miejsce>malo</miejsce>
+        <ruch>malo</ruch>
+        <kontakt>malo</kontakt>
     </zwierze>
-
-    <!-- Można dodać inne zwierzęta -->
 </zwierzeta>
+
+  </zwierzetaDoKalkulatora>
+
+</stronaZwierzat>

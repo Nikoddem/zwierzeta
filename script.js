@@ -24,50 +24,74 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function buildMenu(xml) {
-        const podstrony = xml.querySelectorAll("podstrona");
-        const categories = {};
+    const podstrony = xml.querySelectorAll("podstrona");
+    const categories = {};
 
-        podstrony.forEach(p => {
-            const title = p.querySelector("tytul").textContent;
-            const url = p.querySelector("adres").textContent;
-            const [category] = url.split("/");
+    // --- 1. Najpierw znajdź stronę główną i dodaj osobno ---
+    const homePage = Array.from(podstrony).find(p => {
+        const url = p.querySelector("adres").textContent;
+        return !url.includes("/"); // bez kategorii
+    });
 
-            if (!categories[category]) {
-                categories[category] = [];
-            }
+    if (homePage) {
+        const title = homePage.querySelector("tytul").textContent;
+        const url = homePage.querySelector("adres").textContent;
 
-            categories[category].push({ title, url });
-        });
-
-        Object.entries(categories).forEach(([category, items]) => {
-            const categoryLi = document.createElement("li");
-            const categoryLink = document.createElement("a");
-            categoryLink.href = "#";
-            categoryLink.textContent = category.charAt(0).toUpperCase() + category.slice(1);
-            categoryLi.appendChild(categoryLink);
-
-            const subUl = document.createElement("ul");
-            subUl.style.marginLeft = "15px";
-            subUl.style.display = "none";
-
-            items.forEach(({ title, url }) => {
-                const itemLi = document.createElement("li");
-                const itemA = document.createElement("a");
-                itemA.href = "#" + url;
-                itemA.textContent = title;
-                itemLi.appendChild(itemA);
-                subUl.appendChild(itemLi);
-            });
-
-            categoryLink.addEventListener("click", (e) => {
-                e.preventDefault();
-                subUl.style.display = subUl.style.display === "none" ? "block" : "none";
-            });
-
-            categoryLi.appendChild(subUl);
-            navList.appendChild(categoryLi);
-        });
+        const homeLi = document.createElement("li");
+        const homeA = document.createElement("a");
+        homeA.href = "#" + url;
+        homeA.textContent = title;
+        homeLi.appendChild(homeA);
+        navList.appendChild(homeLi);
     }
+
+    // --- 2. Teraz przetwarzaj pozostałe podstrony w kategoriach ---
+    podstrony.forEach(p => {
+        const title = p.querySelector("tytul").textContent;
+        const url = p.querySelector("adres").textContent;
+
+        if (!url.includes("/")) return; // już dodano jako strona główna
+
+        const [category, page] = url.split("/");
+
+        if (!categories[category]) {
+            categories[category] = [];
+        }
+
+        categories[category].push({ title, url });
+    });
+
+    // Tworzenie struktury menu z kategorii
+    Object.entries(categories).forEach(([category, items]) => {
+        const categoryLi = document.createElement("li");
+        const categoryLink = document.createElement("a");
+        categoryLink.href = "#";
+        categoryLink.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+        categoryLink.style.cursor = "pointer";
+        categoryLi.appendChild(categoryLink);
+
+        const subUl = document.createElement("ul");
+        subUl.style.display = "none";
+
+        items.forEach(({ title, url }) => {
+            const itemLi = document.createElement("li");
+            const itemA = document.createElement("a");
+            itemA.href = "#" + url;
+            itemA.textContent = title;
+            itemLi.appendChild(itemA);
+            subUl.appendChild(itemLi);
+        });
+
+        categoryLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            subUl.style.display = subUl.style.display === "none" ? "block" : "none";
+        });
+
+        categoryLi.appendChild(subUl);
+        navList.appendChild(categoryLi);
+    });
+}
+
 
     function showPage(xml, hash) {
         const adres = hash.replace(/^#/, '');
@@ -108,8 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function init(xml) {
         buildMenu(xml);
         if (window.location.hash) {
-            showPage(xml, window.location.hash);
-        }
+    showPage(xml, window.location.hash);
+} else {
+    showPage(xml, "#strona-glowna"); // domyślna strona
+}
+
         window.addEventListener("hashchange", () => {
             showPage(xml, window.location.hash);
         });
@@ -146,82 +173,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return dominantColor;
     }
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("quiz-form");
-        const wynik = document.getElementById("wynik");
-    
-        let odpowiedzi = {
-            czas: "",
-            przestrzen: "",
-            aktywnosc: "",
-            czystosc: ""
-        };
-    
-        // Ładowanie XML
-        function loadXML(callback) {
-            fetch("baza.xml")
-                .then(res => res.text())
-                .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-                .then(data => callback(data))
-                .catch(err => console.error("Błąd wczytywania XML:", err));
-        }
-    
-        // Funkcja obliczająca najlepsze dopasowanie
-        function obliczNajlepszyZwierzak(xml, odpowiedzi) {
-            const zwierzeta = xml.querySelectorAll("zwierze");
-            let najlepiejDopasowane = [];
-            let minRoznica = Infinity;
-    
-            zwierzeta.forEach(zwierze => {
-                let roznica = 0;
-    
-                // Porównanie odpowiedzi użytkownika z wymaganiami zwierzęcia
-                roznica += porownajOdpowiedzi(zwierze, "uwaga", odpowiedzi.czas);
-                roznica += porownajOdpowiedzi(zwierze, "przestrzen", odpowiedzi.przestrzen);
-                roznica += porownajOdpowiedzi(zwierze, "aktywnosc", odpowiedzi.aktywnosc);
-                roznica += porownajOdpowiedzi(zwierze, "czystosc", odpowiedzi.czystosc);
-    
-                if (roznica < minRoznica) {
-                    minRoznica = roznica;
-                    najlepiejDopasowane = [zwierze];
-                } else if (roznica === minRoznica) {
-                    najlepiejDopasowane.push(zwierze);
-                }
-            });
-    
-            return najlepiejDopasowane;
-        }
-    
-        // Funkcja porównująca odpowiedzi
-        function porownajOdpowiedzi(zwierze, wymaganie, odpowiedz) {
-            const zwierzeWymaganie = zwierze.querySelector(`wymagania > ${wymaganie}`).textContent;
-            if (zwierzeWymaganie === odpowiedz) {
-                return 0;
-            }
-            return 1;
-        }
-    
-        // Obsługa formularza
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            
-            // Pobranie odpowiedzi użytkownika
-            odpowiedzi.czas = document.querySelector('input[name="czas"]:checked').value;
-            odpowiedzi.przestrzen = document.querySelector('input[name="przestrzen"]:checked').value;
-            odpowiedzi.aktywnosc = document.querySelector('input[name="aktywnosc"]:checked').value;
-            odpowiedzi.czystosc = document.querySelector('input[name="czystosc"]:checked').value;
-    
-            // Wybór najlepszego zwierzaka
-            loadXML(function (xml) {
-                const najlepszeZwierze = obliczNajlepszyZwierzak(xml, odpowiedzi);
-                wynik.innerHTML = `
-                    <h3>Najlepszy wybór: ${najlepszeZwierze[0].querySelector("nazwa").textContent}</h3>
-                    <p>${najlepszeZwierze[0].querySelector("opis").textContent}</p>
-                `;
-            });
-        });
-    });
-    
 
     loadXML(init);
 });

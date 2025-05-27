@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kalkulator Zwierzaków</title>
+  <link rel="stylesheet" href="kalkulator.css" />
+</head>
+<body>
+  <div id="kontener">
+    <header>
+      <h1>Zwierzaki w Polsce</h1>
+    </header>
+    <div>
+      <main>
+        <article>
+          <h2>Kalkulator: Jakie zwierzę do Ciebie pasuje?</h2>
+          <form id="quiz-form">
+  <label>Ile uwagi możesz poświęcić?</label>
+  <select name="uwaga">
+    <option value="mala">Mało</option>
+    <option value="srednia">Średnio</option>
+    <option value="duza">Dużo</option>
+  </select>
+
+  <label>Ile masz miejsca?</label>
+  <select name="miejsce">
+    <option value="male">Małe</option>
+    <option value="srednie">Średnie</option>
+    <option value="duze">Duże</option>
+  </select>
+
+  <label>Czy chcesz aktywnego zwierzaka?</label>
+  <select name="ruch">
+    <option value="nie">Nie</option>
+    <option value="troche">Trochę</option>
+    <option value="tak">Tak</option>
+  </select>
+
+  <label>Ile kontaktu oczekujesz?</label>
+  <select name="kontakt">
+    <option value="malo">Mało</option>
+    <option value="srednio">Średnio</option>
+    <option value="duzo">Dużo</option>
+  </select>
+
+  <button type="submit">Sprawdź</button>
+  
+</form>
+
+          <div id="wynik"></div>
+   
+        </article>
+      </main>
+      <aside>
+        <nav>
+          <h3>Menu</h3>
+          <ul id="menu"></ul>
+        </nav>
+        <section>
+          <h3>Reklamy</h3>
+          <div id="reklama">Nie kupuj zwierzaka – kup akwarium!</div>
+        </section>
+      </aside>
+    </div>
+    <footer>
+      <div>pk.sth © 2025</div>
+      <div>Projekt edukacyjny o faunie Polski.</div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+  <script src="kalkulator.js"></script>
+</body>
+</html>
